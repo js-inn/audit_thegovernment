@@ -2,7 +2,7 @@
 """
 Master Audit Suite Runner: audit_thegovernment
 Executes full simulation, verification, tampering, and breach detection 
-pipelines across Basel Financial, Regulators Companion, PM Expenditure, US Executive, and Alberta Premier modules.
+pipelines across Basel Financial, Regulators Companion, PM Expenditure, US Executive, Alberta Premier, and ISED modules.
 Sovereign Entity: JS INNOVATION8390-1 INC. / Jujita Stairs
 """
 
@@ -18,7 +18,8 @@ def reset_vaults():
         "regulators_companion.db", 
         "pm_expenditure_vault.db",
         "us_executive_expenditure_vault.db",
-        "ab_premier_expenditure_vault.db"
+        "ab_premier_expenditure_vault.db",
+        "ised_expenditure_vault.db"
     ]:
         p = Path(db)
         if p.exists():
@@ -55,6 +56,12 @@ STEPS = [
     ("18. Verifying Pristine Alberta Premier SHA-256 Chain", ["python3", "verify_ab_premier_chain.py"], True),
     ("19. Simulating Tampering on Alberta Premier Vault", ["python3", "simulate_ab_premier_tampering.py"], True),
     ("20. Verifying Alberta Premier Chain Breaches (Expecting Failure)", ["python3", "verify_ab_premier_chain.py"], False),
+
+    # 21-24: ISED Ministerial & Grants Module
+    ("21. Running ISED Expenditure & Milestone Grant Audit", ["python3", "ised_expenditure_audit.py"], True),
+    ("22. Verifying Pristine ISED SHA-256 Chain", ["python3", "verify_ised_chain.py"], True),
+    ("23. Simulating Tampering on ISED Milestone Grant Vault", ["python3", "simulate_ised_tampering.py"], True),
+    ("24. Verifying ISED Chain Breaches (Expecting Failure)", ["python3", "verify_ised_chain.py"], False),
 ]
 
 def run_suite():
