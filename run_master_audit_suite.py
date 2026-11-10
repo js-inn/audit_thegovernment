@@ -2,7 +2,7 @@
 """
 Master Audit Suite Runner: audit_thegovernment
 Executes full simulation, verification, tampering, and breach detection 
-pipelines across Basel Financial, Regulators Companion, PM Expenditure, US Executive, Alberta Premier, ISED, MPO Signees, and Minister of Finance modules.
+pipelines across Basel Financial, Regulators Companion, PM Expenditure, US Executive, Alberta Premier, ISED, MPO Signees, Minister of Finance, and Treasury Board Secretariat modules.
 Sovereign Entity: JS INNOVATION8390-1 INC. / Jujita Stairs
 """
 
@@ -21,7 +21,8 @@ def reset_vaults():
         "ab_premier_expenditure_vault.db",
         "ised_expenditure_vault.db",
         "mpo_signee_vault.db",
-        "finance_minister_vault.db"
+        "finance_minister_vault.db",
+        "tbs_sole_source_vault.db"
     ]:
         p = Path(db)
         if p.exists():
@@ -76,6 +77,12 @@ STEPS = [
     ("30. Verifying Pristine Minister of Finance SHA-256 Chain", ["python3", "verify_finance_chain.py"], True),
     ("31. Simulating Tampering on Minister of Finance Vault", ["python3", "simulate_finance_tampering.py"], True),
     ("32. Verifying Minister of Finance Chain Breaches (Expecting Failure)", ["python3", "verify_finance_chain.py"], False),
+
+    # 33-36: Treasury Board Secretariat (TBS) Module
+    ("33. Running Treasury Board Secretariat Sole-Source Audit", ["python3", "tbs_sole_source_audit.py"], True),
+    ("34. Verifying Pristine Treasury Board SHA-256 Chain", ["python3", "verify_tbs_chain.py"], True),
+    ("35. Simulating Tampering on Treasury Board Vault", ["python3", "simulate_tbs_tampering.py"], True),
+    ("36. Verifying Treasury Board Chain Breaches (Expecting Failure)", ["python3", "verify_tbs_chain.py"], False),
 ]
 
 def run_suite():
