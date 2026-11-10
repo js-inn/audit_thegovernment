@@ -2,7 +2,7 @@
 """
 Master Audit Suite Runner: audit_thegovernment
 Executes full simulation, verification, tampering, and breach detection 
-pipelines across Basel Financial, Regulators Companion, PM Expenditure, and US Executive modules.
+pipelines across Basel Financial, Regulators Companion, PM Expenditure, US Executive, and Alberta Premier modules.
 Sovereign Entity: JS INNOVATION8390-1 INC. / Jujita Stairs
 """
 
@@ -17,7 +17,8 @@ def reset_vaults():
         "basel_audit_simulation.db", 
         "regulators_companion.db", 
         "pm_expenditure_vault.db",
-        "us_executive_expenditure_vault.db"
+        "us_executive_expenditure_vault.db",
+        "ab_premier_expenditure_vault.db"
     ]:
         p = Path(db)
         if p.exists():
@@ -48,6 +49,12 @@ STEPS = [
     ("14. Verifying Pristine US Executive SHA-256 Chain", ["python3", "verify_us_exec_chain.py"], True),
     ("15. Simulating Tampering on US Executive Vault", ["python3", "simulate_us_exec_tampering.py"], True),
     ("16. Verifying US Executive Chain Breaches (Expecting Failure)", ["python3", "verify_us_exec_chain.py"], False),
+
+    # 17-20: Alberta Premier Expenditure Module
+    ("17. Running Alberta Premier Expenditure Audit", ["python3", "ab_premier_expenditure_audit.py"], True),
+    ("18. Verifying Pristine Alberta Premier SHA-256 Chain", ["python3", "verify_ab_premier_chain.py"], True),
+    ("19. Simulating Tampering on Alberta Premier Vault", ["python3", "simulate_ab_premier_tampering.py"], True),
+    ("20. Verifying Alberta Premier Chain Breaches (Expecting Failure)", ["python3", "verify_ab_premier_chain.py"], False),
 ]
 
 def run_suite():
