@@ -36,24 +36,35 @@ jobs:
         run: |
           python whistleblower_provenance_vault.py
 
-      - name: Verify All Audit Reports Generated
+      - name: Execute Regulatory Feed Parser Engine
         run: |
-          echo "[*] Checking generated reports..."
+          python regulatory_feed_parser.py
+
+      - name: Execute Sovereign Archive Export Utility
+        run: |
+          python export_vault_archive.py
+
+      - name: Verify All Audit Reports & Archives Generated
+        run: |
+          echo "[*] Checking generated reports and archives..."
           if [ -f "reports/government_accountability_audit_report.md" ] && \
              [ -f "reports/dual_ledger_deceit_analysis.md" ] && \
              [ -f "reports/systemic_corruption_financial_flows_report.md" ] && \
-             [ -f "reports/whistleblower_provenance_audit_log.md" ]; then
-            echo "[+] SUCCESS: All four sovereign audit reports generated successfully."
+             [ -f "reports/whistleblower_provenance_audit_log.md" ] && \
+             [ -f "reports/regulatory_feed_ingestion_report.md" ]; then
+            echo "[+] SUCCESS: All five sovereign audit reports generated successfully."
           else
             echo "[-] ERROR: One or more audit reports are missing!"
             exit 1
           fi
 
-      - name: Upload Complete Audit Artifacts & Vaults
+      - name: Upload Complete Sovereign Audit Artifacts & Vaults
         uses: actions/upload-artifact@v4
         with:
-          name: sovereign-audit-vault-artifacts
+          name: canadian-sovereign-audit-export
           path: |
             reports/*.md
             data/*.db
+            archives/*.zip
+            archives/*.json
           retention-days: 90

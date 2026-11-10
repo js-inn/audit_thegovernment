@@ -1,0 +1,32 @@
+{
+  "export_timestamp_utc": "2026-11-10T08:30:39.015875+00:00",
+  "sovereign_entity": "JS INNOVATION8390-1 INC. / Jujita Stairs",
+  "jurisdiction": "Canada (Federal / Alberta)",
+  "international_adherence_notice": "Foreign adoption must strictly adhere to Canadian sovereign compliance standards.",
+  "bundled_files": [
+    {
+      "path": "data/gov_audit_ledger.db",
+      "sha256": "87f001c9bedd64499c72ef635ce1d5adf97dfa2786a62f52fb1903673953f0a4"
+    },
+    {
+      "path": "data/dual_ledger_vault.db",
+      "sha256": "005c5c72f0e75b3e7298ae7ded720257ab219d413e5e880f01bec5d6582245b9"
+    },
+    {
+      "path": "data/corruption_blueprint_vault.db",
+      "sha256": "0cb020b1a450568588c650dd5ea565b1ed14097bea5755735827231f7f497040"
+    },
+    {
+      "path": "reports/government_accountability_audit_report.md",
+      "sha256": "971eccd417273fe19f1281b28c3fa607b64fe8cc3eebdbd21cad82a32bce16a9"
+    },
+    {
+      "path": "reports/dual_ledger_deceit_analysis.md",
+      "sha256": "546e87f050e1b7d753b0a94a37011b958614811edc322f4cf54a99f21c266384"
+    },
+    {
+      "path": "reports/systemic_corruption_financial_flows_report.md",
+      "sha256": "f195752f1612fa749929d938fb6119861f08c49ca1ff6f1d1cb8ef7891224523"
+    }
+  ]
+}
