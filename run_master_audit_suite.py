@@ -2,7 +2,7 @@
 """
 Master Audit Suite Runner: audit_thegovernment
 Executes full simulation, verification, tampering, and breach detection 
-pipelines across Basel Financial, Regulators Companion, and PM Expenditure modules.
+pipelines across Basel Financial, Regulators Companion, PM Expenditure, and US Executive modules.
 Sovereign Entity: JS INNOVATION8390-1 INC. / Jujita Stairs
 """
 
@@ -13,7 +13,12 @@ from pathlib import Path
 
 def reset_vaults():
     print("[*] Resetting audit vaults for pristine test execution...")
-    for db in ["basel_audit_simulation.db", "regulators_companion.db", "pm_expenditure_vault.db"]:
+    for db in [
+        "basel_audit_simulation.db", 
+        "regulators_companion.db", 
+        "pm_expenditure_vault.db",
+        "us_executive_expenditure_vault.db"
+    ]:
         p = Path(db)
         if p.exists():
             p.unlink()
@@ -37,6 +42,12 @@ STEPS = [
     ("10. Verifying Pristine PM Expenditure SHA-256 Chain", ["python3", "verify_pm_chain.py"], True),
     ("11. Simulating Tampering on PM Expenditure Vault", ["python3", "simulate_pm_tampering.py"], True),
     ("12. Verifying PM Expenditure Chain Breaches (Expecting Failure)", ["python3", "verify_pm_chain.py"], False),
+
+    # 13-16: US Executive Expenditure Module
+    ("13. Running US Executive Expenditure Audit", ["python3", "us_executive_expenditure_audit.py"], True),
+    ("14. Verifying Pristine US Executive SHA-256 Chain", ["python3", "verify_us_exec_chain.py"], True),
+    ("15. Simulating Tampering on US Executive Vault", ["python3", "simulate_us_exec_tampering.py"], True),
+    ("16. Verifying US Executive Chain Breaches (Expecting Failure)", ["python3", "verify_us_exec_chain.py"], False),
 ]
 
 def run_suite():
