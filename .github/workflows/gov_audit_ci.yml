@@ -1,0 +1,44 @@
+name: Government Accountability Audit CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  run-gov-audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Execute Audit Engine
+        run: |
+          python core_audit_engine.py
+
+      - name: Verify Report Generation
+        run: |
+          if [ -f "reports/government_accountability_audit_report.md" ]; then
+            echo "[+] SUCCESS: Audit report generated."
+            cat reports/government_accountability_audit_report.md
+          else
+            echo "[-] ERROR: Audit report missing!"
+            exit 1
+          fi
+
+      - name: Upload Audit Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: government-audit-artifacts
+          path: |
+            reports/government_accountability_audit_report.md
+            data/gov_audit_ledger.db
+          retention-days: 90
