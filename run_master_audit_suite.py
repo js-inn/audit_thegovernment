@@ -2,7 +2,7 @@
 """
 Master Audit Suite Runner: audit_thegovernment
 Executes full simulation, verification, tampering, and breach detection 
-pipelines across both Basel Financial and Regulators Companion modules.
+pipelines across Basel Financial, Regulators Companion, and PM Expenditure modules.
 Sovereign Entity: JS INNOVATION8390-1 INC. / Jujita Stairs
 """
 
@@ -13,21 +13,30 @@ from pathlib import Path
 
 def reset_vaults():
     print("[*] Resetting audit vaults for pristine test execution...")
-    for db in ["basel_audit_simulation.db", "regulators_companion.db"]:
+    for db in ["basel_audit_simulation.db", "regulators_companion.db", "pm_expenditure_vault.db"]:
         p = Path(db)
         if p.exists():
             p.unlink()
             print(f"    Removed old vault: {db}")
 
 STEPS = [
+    # 1-4: Basel Financial Module
     ("1. Running Basel Financial Audit Simulation", ["python3", "td_basel_audit_simulator.py"], True),
     ("2. Verifying Pristine Basel SHA-256 Chain", ["python3", "verify_basel_chain.py"], True),
     ("3. Simulating Tampering on Basel Vault", ["python3", "simulate_tampering.py"], True),
     ("4. Verifying Basel Chain Breaches (Expecting Failure)", ["python3", "verify_basel_chain.py"], False),
+    
+    # 5-8: Regulators Companion Module
     ("5. Running Regulators Companion Procurement Audit", ["python3", "regulators_companion_engine.py"], True),
     ("6. Verifying Pristine Regulators SHA-256 Chain", ["python3", "verify_regulators_chain.py"], True),
     ("7. Simulating Tampering on Regulators Vault", ["python3", "simulate_regulators_tampering.py"], True),
     ("8. Verifying Regulators Chain Breaches (Expecting Failure)", ["python3", "verify_regulators_chain.py"], False),
+
+    # 9-12: PM & Federal Expenditure Module
+    ("9. Running PM & Federal Expenditure Audit", ["python3", "pm_expenditure_audit.py"], True),
+    ("10. Verifying Pristine PM Expenditure SHA-256 Chain", ["python3", "verify_pm_chain.py"], True),
+    ("11. Simulating Tampering on PM Expenditure Vault", ["python3", "simulate_pm_tampering.py"], True),
+    ("12. Verifying PM Expenditure Chain Breaches (Expecting Failure)", ["python3", "verify_pm_chain.py"], False),
 ]
 
 def run_suite():
