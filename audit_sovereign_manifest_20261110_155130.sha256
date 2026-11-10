@@ -1,0 +1,24 @@
+# SOVEREIGN AUDIT RELEASE MANIFEST
+**Generated:** 2026-11-10 15:51:30 UTC  
+**Sovereign Entity:** JS INNOVATION8390-1 INC. / Jujita Stairs  
+**Archive File:** audit_sovereign_release_20261110_155130.zip  
+**SHA-256 Checksum:** `9367469d6a23250dfb21cc73c39d0ca8725ffd505997eb93741c03befb16fa7b`  
+
+---
+## Included Artifacts:
+- `td_basel_audit_report.md`
+- `procurement_audit_report.md`
+- `pm_expenditure_audit_report.md`
+- `us_executive_expenditure_report.md`
+- `ab_premier_expenditure_report.md`
+- `ised_expenditure_report.md`
+- `dawn_farrell_mpo_audit_report.md`
+- `mpo_signee_procurement_report.md`
+- `basel_audit_simulation.db`
+- `regulators_companion.db`
+- `pm_expenditure_vault.db`
+- `us_executive_expenditure_vault.db`
+- `ab_premier_expenditure_vault.db`
+- `ised_expenditure_vault.db`
+- `dawn_farrell_mpo_vault.db`
+- `mpo_signee_vault.db`
