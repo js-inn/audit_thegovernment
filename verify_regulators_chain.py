@@ -40,14 +40,10 @@ def verify_chain():
     for row in records:
         rec_id, tender_id, dept, vendor, val, risk, prev_hash, current_hash, timestamp = row
 
-        # Verify previous hash continuity
         if prev_hash != expected_prev_hash:
             print(f"[!] CHAIN BREAK at Record ID {rec_id} ({tender_id}): Previous hash mismatch!")
-            print(f"    Expected: {expected_prev_hash}")
-            print(f"    Found:    {prev_hash}")
             chain_valid = False
 
-        # Recompute hash
         hash_base = f"{tender_id}|{dept}|{vendor}|{val}|{risk}|{prev_hash}|{timestamp}"
         recomputed_hash = hashlib.sha256(hash_base.encode('utf-8')).hexdigest()
 
@@ -57,17 +53,19 @@ def verify_chain():
             print(f"    Recomputed: {recomputed_hash}")
             chain_valid = False
         else:
-            print(f"[✓] Record ID {rec_id} [{tender_id}] -> Hash Verified Match ({current_hash[:16]}...)")
+            print(f"[✓] Record ID {rec_id} [{tender_id}] -> Hash Verified Match ({current_hash[:12]}...)")
 
         expected_prev_hash = current_hash
 
     print("\n" + "="*50)
     if chain_valid:
         print("🟢 SUCCESS: Regulators Companion chain is fully intact and verified.")
+        print("="*50)
+        sys.exit(0)
     else:
         print("🔴 FAILURE: Integrity check failed. Chain corruption or tampering detected.")
+        print("="*50)
         sys.exit(1)
-    print("="*50)
 
 if __name__ == "__main__":
     verify_chain()
