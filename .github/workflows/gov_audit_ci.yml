@@ -1,4 +1,4 @@
-name: Government Accountability Audit CI
+name: Government Accountability & Corruption Audit CI
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-gov-audit:
+  run-all-audit-engines:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,25 +20,35 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Execute Audit Engine
+      - name: Execute Core Compliance Audit Engine
         run: |
           python core_audit_engine.py
 
-      - name: Verify Report Generation
+      - name: Execute Dual-Ledger Tactical Deceit Engine
         run: |
-          if [ -f "reports/government_accountability_audit_report.md" ]; then
-            echo "[+] SUCCESS: Audit report generated."
-            cat reports/government_accountability_audit_report.md
+          python dual_ledger_tacticaldeciet.py
+
+      - name: Execute Systemic Corruption & Expenditure Watchdog Blueprint
+        run: |
+          python corruption_blueprint.py
+
+      - name: Verify All Audit Reports Generated
+        run: |
+          echo "[*] Checking generated reports..."
+          if [ -f "reports/government_accountability_audit_report.md" ] && \
+             [ -f "reports/dual_ledger_deceit_analysis.md" ] && \
+             [ -f "reports/systemic_corruption_financial_flows_report.md" ]; then
+            echo "[+] SUCCESS: All three sovereign audit reports generated successfully."
           else
-            echo "[-] ERROR: Audit report missing!"
+            echo "[-] ERROR: One or more audit reports are missing!"
             exit 1
           fi
 
-      - name: Upload Audit Artifacts
+      - name: Upload Complete Audit Artifacts & Vaults
         uses: actions/upload-artifact@v4
         with:
-          name: government-audit-artifacts
+          name: sovereign-audit-vault-artifacts
           path: |
-            reports/government_accountability_audit_report.md
-            data/gov_audit_ledger.db
+            reports/*.md
+            data/*.db
           retention-days: 90
