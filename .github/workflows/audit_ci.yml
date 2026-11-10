@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  run-audit-suite:
+  run-master-audit-suite:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,6 +19,6 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Run Master Audit Suite
+    - name: Run 16-Step Master Audit Suite
       run: |
         python3 run_master_audit_suite.py
