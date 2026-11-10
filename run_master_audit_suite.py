@@ -2,7 +2,7 @@
 """
 Master Audit Suite Runner: audit_thegovernment
 Executes full simulation, verification, tampering, and breach detection 
-pipelines across Basel Financial, Regulators Companion, PM Expenditure, US Executive, Alberta Premier, and ISED modules.
+pipelines across Basel Financial, Regulators Companion, PM Expenditure, US Executive, Alberta Premier, ISED, and MPO Signee modules.
 Sovereign Entity: JS INNOVATION8390-1 INC. / Jujita Stairs
 """
 
@@ -19,7 +19,8 @@ def reset_vaults():
         "pm_expenditure_vault.db",
         "us_executive_expenditure_vault.db",
         "ab_premier_expenditure_vault.db",
-        "ised_expenditure_vault.db"
+        "ised_expenditure_vault.db",
+        "mpo_signee_vault.db"
     ]:
         p = Path(db)
         if p.exists():
@@ -62,6 +63,12 @@ STEPS = [
     ("22. Verifying Pristine ISED SHA-256 Chain", ["python3", "verify_ised_chain.py"], True),
     ("23. Simulating Tampering on ISED Milestone Grant Vault", ["python3", "simulate_ised_tampering.py"], True),
     ("24. Verifying ISED Chain Breaches (Expecting Failure)", ["python3", "verify_ised_chain.py"], False),
+
+    # 25-28: MPO Signee & Procurement Module
+    ("25. Running MPO Signee & Procurement Audit", ["python3", "mpo_signee_procurement_audit.py"], True),
+    ("26. Verifying Pristine MPO Signee SHA-256 Chain", ["python3", "verify_mpo_signee_chain.py"], True),
+    ("27. Simulating Tampering on MPO Signee Vault", ["python3", "simulate_mpo_signee_tampering.py"], True),
+    ("28. Verifying MPO Signee Chain Breaches (Expecting Failure)", ["python3", "verify_mpo_signee_chain.py"], False),
 ]
 
 def run_suite():
