@@ -1,37 +1,48 @@
-#!/usr/bin/env python3
+#!/usr/env/python3
 """
-Tamper Demonstration Script
-Silently modifies a record in basel_audit_simulation.db to test SHA-256 integrity detection.
+Basel Audit Vault: Tamper Simulation Suite
+Injects an unauthorized modification into basel_audit_simulation.db to test SHA-256 chain detection.
+Sovereign Entity: JS INNOVATION8390-1 INC. / Jujita Stairs
 """
 
 import sqlite3
+import sys
+from pathlib import Path
 
 DB_FILE = "basel_audit_simulation.db"
 
 def tamper_database():
+    if not Path(DB_FILE).exists():
+        print(f"[-] Error: Audit database '{DB_FILE}' not found. Run td_basel_audit_simulator.py first.")
+        sys.exit(1)
+
     print(f"[*] Opening audit vault for malicious injection: {DB_FILE}")
     conn = sqlite3.connect(DB_FILE)
     cursor = conn.cursor()
-    
-    # Inspect original value for BASEL-LEVERAGE-03
-    cursor.execute("SELECT metric_id, audited_value, compliance_status FROM basel_audit_records WHERE metric_id = 'BASEL-LEVERAGE-03'")
-    orig = cursor.fetchone()
-    print(f"[-] BEFORE TAMPERING -> Metric: {orig[0]} | Audited Value: {orig[1]} | Status: {orig[2]}")
-    
-    # Silently tamper with the audited value and change status without recalculating hash
+
+    # Inspect record before tampering
+    cursor.execute("SELECT metric_id, audited_value, status FROM basel_metrics WHERE metric_id = 'BASEL-LEVERAGE-03'")
+    row = cursor.fetchone()
+    if not row:
+        print("[-] Target metric 'BASEL-LEVERAGE-03' not found in vault.")
+        sys.exit(1)
+
+    print(f"[-] BEFORE TAMPERING -> Metric: {row[0]} | Audited Value: {row[1]} | Status: {row[2]}")
+
+    # Inject unauthorized change without updating hash
     print("[!] INJECTING UNAUTHORIZED MODIFICATION: Changing Leverage Ratio from 4.3 to 7.5...")
-    cursor.execute('''
-        UPDATE basel_audit_records 
-        SET audited_value = 7.5, compliance_status = 'FORGED_COMPLIANT_OVERRIDE'
+    cursor.execute("""
+        UPDATE basel_metrics 
+        SET audited_value = 7.5, status = 'FORGED_COMPLIANT_OVERRIDE'
         WHERE metric_id = 'BASEL-LEVERAGE-03'
-    ''')
+    """)
     conn.commit()
-    
-    # Verify modification took effect
-    cursor.execute("SELECT metric_id, audited_value, compliance_status FROM basel_audit_records WHERE metric_id = 'BASEL-LEVERAGE-03'")
-    updated = cursor.fetchone()
-    print(f"[!] AFTER TAMPERING  -> Metric: {updated[0]} | Audited Value: {updated[1]} | Status: {updated[2]}")
+
+    cursor.execute("SELECT metric_id, audited_value, status FROM basel_metrics WHERE metric_id = 'BASEL-LEVERAGE-03'")
+    row_after = cursor.fetchone()
+    print(f"[!] AFTER TAMPERING  -> Metric: {row_after[0]} | Audited Value: {row_after[1]} | Status: {row_after[2]}")
     conn.close()
+
     print("[*] Tampering complete. Now run 'python3 verify_basel_chain.py' to observe the cryptographic verifier catch this breach.")
 
 if __name__ == "__main__":
