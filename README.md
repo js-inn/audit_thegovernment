@@ -26,3 +26,7 @@ A sovereign, zero-dependency Python compliance and accountability auditing engin
 
 ---
 *Created by Jujita Stairs / JS INNOVATION8390-1 INC.*
+
+## 🇨🇦 Canadian Sovereign Primacy & International Adaptation
+- **National Jurisdiction:** `Audit_thegovernment` is a sovereign Canadian framework owned and governed by **JS INNOVATION8390-1 INC. / Jujita Stairs**, operating under Canadian federal and provincial legal frameworks.
+- **Cross-Border & Foreign Adaptation:** Any foreign state, international coalition, or external entity adapting this framework for foreign institutional auditing **must formally subordinate to Canadian legal primacy**, retain immutable attribution to JS INNOVATION8390-1 INC., and comply with all Canadian source-available licensing restrictions.
