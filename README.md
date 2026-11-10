@@ -1,32 +1,28 @@
 # Audit_thegovernment
-
-A sovereign, zero-dependency Python compliance and accountability auditing engine designed to ingest official institutional responses, regulatory filings, and dual-ledger discrepancies with cryptographic SHA-256 provenance chaining.
-
-## ⚖️ Licensing & Intellectual Property Terms
-- **Community & Advocacy Use:** **Free** for community lawyers, social advocates, and independent researchers for public interest work, **strictly requiring attribution** to JS INNOVATION8390-1 INC. / Jujita Stairs.
-- **Commercial & Business Use:** **Strictly restricted.** Any for-profit business or financial institution utilizing this framework without a formal commercial sublicense and royalty agreement is operating out of compliance and will be systematically audited via cryptographic provenance tracking.
-
-## Architecture
-- **Core Engine:** `core_audit_engine.py` (SQLite-backed node tracker and margin evaluator)
-- **CI/CD Pipeline:** GitHub Actions automated verification and artifact compilation (`.github/workflows/gov_audit_ci.yml`)
-- **Output Vault:** Timestamped, cryptographically anchored Markdown audit logs in `reports/`.
+**Sovereign Canadian Institutional Audit & Cryptographic Provenance Framework**  
+**Owned and Controlled by:** JS INNOVATION8390-1 INC. / Jujita Stairs  
+**Jurisdiction:** Canada (Federal / Alberta)  
 
 ---
-*Created by Jujita Stairs / JS INNOVATION8390-1 INC.*
 
+## 🇨🇦 Canadian Sovereign & People's Economic Mandate
+`Audit_thegovernment` is an independent, zero-dependency sovereign Canadian digital public asset. 
 
-# Audit_thegovernment
-
-A sovereign, zero-dependency Python compliance and accountability auditing engine designed to ingest official institutional responses, regulatory filings, and dual-ledger discrepancies with cryptographic SHA-256 provenance chaining.
-
-## Architecture
-- **Core Engine:** `core_audit_engine.py` (SQLite-backed node tracker and margin evaluator)
-- **CI/CD Pipeline:** GitHub Actions automated verification and artifact compilation (`.github/workflows/gov_audit_ci.yml`)
-- **Output Vault:** Timestamped, cryptographically anchored Markdown audit logs in `reports/`.
+1. **People-First Economic Output:** Although designed to audit government opacity and institutional overreach, any commercial value, economic output, or licensing revenue derived from this framework is strictly dedicated to benefiting the **people of Canada**. 
+2. **International & Foreign Adoption Rules:** Any foreign nation, international body, or external organization adopting or adapting this framework **must be in explicit formal agreement with Canadian sovereign oversight standards** and must respect that intellectual property and economic priority remain anchored to JS INNOVATION8390-1 INC. for Canadian public benefit.
+3. **Zero State Capture:** This tool exists to hold power accountable, not to serve as a rubber stamp for institutional corruption. Foreign or domestic entities seeking to exploit the architecture for unaccountable surveillance or unvouched spending are strictly prohibited.
 
 ---
-*Created by Jujita Stairs / JS INNOVATION8390-1 INC.*
 
-## 🇨🇦 Canadian Sovereign Primacy & International Adaptation
-- **National Jurisdiction:** `Audit_thegovernment` is a sovereign Canadian framework owned and governed by **JS INNOVATION8390-1 INC. / Jujita Stairs**, operating under Canadian federal and provincial legal frameworks.
-- **Cross-Border & Foreign Adaptation:** Any foreign state, international coalition, or external entity adapting this framework for foreign institutional auditing **must formally subordinate to Canadian legal primacy**, retain immutable attribution to JS INNOVATION8390-1 INC., and comply with all Canadian source-available licensing restrictions.
+## 🏛️ Core Architecture & Modules
+- **`core_audit_engine.py`**: Baseline compliance and institutional node tracking.
+- **`dual_ledger_tacticaldeciet.py`**: Quantifies divergence between public and internal ledgers.
+- **`corruption_blueprint.py`**: Maps systemic expenditure anomalies and connivance.
+- **`whistleblower_provenance_vault.py`**: Salted SHA-256 secure whistleblower ingestion and metadata stripping.
+- **`regulatory_feed_parser.py`**: Automated ingestion of public disclosures and procurement tenders.
+- **`export_vault_archive.py`**: Cryptographic bundling and manifest generation for legal/advocacy handoff.
+
+---
+
+## 🔒 Cryptographic Provenance & CI/CD
+All databases (`data/*.db`) and reports (`reports/*.md`) utilize SHA-256 cryptographic chaining. Automated verification runs via GitHub Actions on every commit to ensure tamper-evident integrity.
