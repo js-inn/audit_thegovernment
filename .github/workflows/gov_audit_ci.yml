@@ -32,13 +32,18 @@ jobs:
         run: |
           python corruption_blueprint.py
 
+      - name: Execute Whistleblower Provenance Vault Engine
+        run: |
+          python whistleblower_provenance_vault.py
+
       - name: Verify All Audit Reports Generated
         run: |
           echo "[*] Checking generated reports..."
           if [ -f "reports/government_accountability_audit_report.md" ] && \
              [ -f "reports/dual_ledger_deceit_analysis.md" ] && \
-             [ -f "reports/systemic_corruption_financial_flows_report.md" ]; then
-            echo "[+] SUCCESS: All three sovereign audit reports generated successfully."
+             [ -f "reports/systemic_corruption_financial_flows_report.md" ] && \
+             [ -f "reports/whistleblower_provenance_audit_log.md" ]; then
+            echo "[+] SUCCESS: All four sovereign audit reports generated successfully."
           else
             echo "[-] ERROR: One or more audit reports are missing!"
             exit 1
