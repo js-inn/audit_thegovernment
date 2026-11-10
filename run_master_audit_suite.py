@@ -9,6 +9,15 @@ Sovereign Entity: JS INNOVATION8390-1 INC. / Jujita Stairs
 import subprocess
 import sys
 import time
+from pathlib import Path
+
+def reset_vaults():
+    print("[*] Resetting audit vaults for pristine test execution...")
+    for db in ["basel_audit_simulation.db", "regulators_companion.db"]:
+        p = Path(db)
+        if p.exists():
+            p.unlink()
+            print(f"    Removed old vault: {db}")
 
 STEPS = [
     ("1. Running Basel Financial Audit Simulation", ["python3", "td_basel_audit_simulator.py"], True),
@@ -27,6 +36,9 @@ def run_suite():
     print(" Sovereign Entity: JS INNOVATION8390-1 INC. / Jujita Stairs")
     print("="*70 + "\n")
 
+    reset_vaults()
+    print("\n" + "-"*70 + "\n")
+
     success_count = 0
     total_steps = len(STEPS)
 
@@ -35,7 +47,7 @@ def run_suite():
         print(f"       Command: {' '.join(cmd)}")
         print("-" * 50)
         
-        result = subprocess.run(cmd, capture_output=False)
+        result = subprocess.run(cmd)
         
         if expect_success:
             if result.returncode == 0:
@@ -52,7 +64,7 @@ def run_suite():
                 print(f"\n[FAIL] {title} expected integrity failure but passed unexpectedly!\n")
                 sys.exit(1)
         
-        time.sleep(0.5)
+        time.sleep(0.3)
 
     print("="*70)
     print(f" 🟢 MASTER SUITE COMPLETE: {success_count}/{total_steps} Verification Steps Passed.")
