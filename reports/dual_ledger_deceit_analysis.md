@@ -1,5 +1,5 @@
 # DUAL-LEDGER TACTICAL DECEIT & DIVERGENCE ANALYSIS
-**Generated:** 2026-11-10 07:29:51 UTC  
+**Generated:** 2026-11-10 08:11:37 UTC  
 **Framework:** Audit_thegovernment Tactical Deceit Engine  
 **Cryptographic Anchor:** SHA-256 Immutable Provenance Chaining  
 
