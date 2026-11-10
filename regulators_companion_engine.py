@@ -27,8 +27,9 @@ class RegulatorsCompanionEngine:
     def _init_db(self):
         with self._connect() as conn:
             cursor = conn.cursor()
+            cursor.execute('DROP TABLE IF EXISTS procurement_audits')
             cursor.execute('''
-                CREATE TABLE IF NOT EXISTS procurement_audits (
+                CREATE TABLE procurement_audits (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     tender_id TEXT UNIQUE,
                     department TEXT,
@@ -57,15 +58,12 @@ class RegulatorsCompanionEngine:
 
         with self._connect() as conn:
             cursor = conn.cursor()
-            try:
-                cursor.execute('''
-                    INSERT INTO procurement_audits (tender_id, department, vendor_name, contract_value, risk_score, previous_hash, current_hash, timestamp, audit_finding)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-                ''', (tender_id, department, vendor_name, contract_value, risk_score, prev_hash, current_hash, timestamp, finding))
-                conn.commit()
-                print(f"[REGULATORS COMPANION] Audited Tender [{tender_id}] -> Finding: {finding}")
-            except sqlite3.IntegrityError:
-                print(f"[-] Tender ID '{tender_id}' already audited.")
+            cursor.execute('''
+                INSERT INTO procurement_audits (tender_id, department, vendor_name, contract_value, risk_score, previous_hash, current_hash, timestamp, audit_finding)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ''', (tender_id, department, vendor_name, contract_value, risk_score, prev_hash, current_hash, timestamp, finding))
+            conn.commit()
+            print(f"[REGULATORS COMPANION] Audited Tender [{tender_id}] -> Finding: {finding}")
 
     def run_simulation(self):
         print("[*] Executing Regulators Companion audit on public procurement feeds...")
