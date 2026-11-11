@@ -1,0 +1,23 @@
+# Python Bytecode & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+
+# Sovereign Audit SQLite Databases & Vaults
+*.db
+*.sqlite
+*.sqlite3
+
+# Archives & Temporary Snapshots
+archives/
+*.zip
+*.tar.gz
+
+# OS & Editor Artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
