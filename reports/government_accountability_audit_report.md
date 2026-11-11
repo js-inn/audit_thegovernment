@@ -1,30 +1,12 @@
-# GOVERNMENT & INSTITUTIONAL ACCOUNTABILITY AUDIT REPORT
-**Generated:** 2026-11-10 08:11:37 UTC  
-**Framework:** Audit_thegovernment Sovereign Compliance Ledger  
-**Cryptographic Standard:** SHA-256 Provenance Chaining  
-
+---
+CREATOR_UUID: e4f1b2a7-6d3c-4902-8a5e-9f7b6c5d4e1a
+CRYPTOGRAPHIC_ANCHOR: 3d9f8a21-c5e7-4b6a-9128-f0d3e2a1b9c7
+CONTRACT_REF: MSA CW2321555
+BUSINESS_NUMBER: 735350935
 ---
 
-## 1. Registered Accountability Nodes
-| Node ID | Agency / Institution | Filing Type | Reference Number | Hash Anchor |
-|---|---|---|---|---|
-| `GOV-AUDIT-01` | ATB Financial / Office of the Privacy Officer | Institutional Compliance Inquiry | `REF-670314-681` | `3cd66e4d8b...` |
-| `GOV-AUDIT-02` | CIRO / Schedule I Oversight | Self-Regulatory Compliance Audit | `CIRO-MEM-2026-X` | `abacc78036...` |
+# SOVEREIGN AUDIT REPORT
 
----
+## Generated Report: government_accountability_audit_report.md
 
-## 2. Evaluation & Discrepancy Log
-| Timestamp | Record ID | Status | Details | Score (0-100) |
-|---|---|---|---|---|
-| 2026-11-10T07:09:09 | `GOV-AUDIT-01` | **EVAL_DEFAULT_UNRESOLVED** | Agency 'ATB Financial / Office of the Privacy Officer' (Institutional Compliance Inquiry, Ref: REF-670314-681) evaluated with status 'DEFAULT_UNRESOLVED'. | `10.0` |
-| 2026-11-10T07:09:09 | `GOV-AUDIT-02` | **EVAL_PROSPECTUS_DIVERGENCE** | Agency 'CIRO / Schedule I Oversight' (Self-Regulatory Compliance Audit, Ref: CIRO-MEM-2026-X) evaluated with status 'PROSPECTUS_DIVERGENCE'. | `25.0` |
-| 2026-11-10T08:11:37 | `GOV-AUDIT-01` | **EVAL_DEFAULT_UNRESOLVED** | Agency 'ATB Financial / Office of the Privacy Officer' (Institutional Compliance Inquiry, Ref: REF-670314-681) evaluated with status 'DEFAULT_UNRESOLVED'. | `10.0` |
-| 2026-11-10T08:11:37 | `GOV-AUDIT-02` | **EVAL_PROSPECTUS_DIVERGENCE** | Agency 'CIRO / Schedule I Oversight' (Self-Regulatory Compliance Audit, Ref: CIRO-MEM-2026-X) evaluated with status 'PROSPECTUS_DIVERGENCE'. | `25.0` |
-
----
-
-## 3. Verification & Provenance
-- **Audit Ledger:** Locked via zero-dependency SQLite storage.
-- **Integrity Status:** Immutable cryptographic chain verified.
-
-*End of Report — Audit_thegovernment Engine*
+This is an immutable sovereign audit record anchored under GVT-PARENT-01 and MSA CW2321555.

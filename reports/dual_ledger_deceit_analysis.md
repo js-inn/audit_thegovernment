@@ -1,20 +1,12 @@
-# DUAL-LEDGER TACTICAL DECEIT & DIVERGENCE ANALYSIS
-**Generated:** 2026-11-10 08:11:37 UTC  
-**Framework:** Audit_thegovernment Tactical Deceit Engine  
-**Cryptographic Anchor:** SHA-256 Immutable Provenance Chaining  
-
+---
+CREATOR_UUID: e4f1b2a7-6d3c-4902-8a5e-9f7b6c5d4e1a
+CRYPTOGRAPHIC_ANCHOR: 3d9f8a21-c5e7-4b6a-9128-f0d3e2a1b9c7
+CONTRACT_REF: MSA CW2321555
+BUSINESS_NUMBER: 735350935
 ---
 
-## 1. Recorded Discrepancy Nodes (Ledger A vs. Ledger B)
-| Case ID | Institution | Public Reporting (Ledger A) | Internal Truth (Ledger B) | Divergence Metric | Classification | Hash Anchor |
-|---|---|---|---|---|---|---|
-| `DL-CASE-2026-01` | Schedule I Bank / ATB Financial Context | `100.0% Compliant Settlement Disclosure` | `12-Month Unresolved Default & Omitted Liability` | **100.00%** | Tactical Disclosure Omission | `141b9735db...` |
-| `DL-CASE-2026-02` | CIRO Oversight Reporting Node | `Standardized Prospectus Pool Rating: AAA` | `Unverified Sub-Asset Repackaging Risk` | **100.00%** | Asset Repackaging Deceit | `7b841ff3e9...` |
+# SOVEREIGN AUDIT REPORT
 
----
+## Generated Report: dual_ledger_deceit_analysis.md
 
-## 2. Commercial & Legal Notice
-- **Non-Commercial Advocacy:** Free for community legal advocates and social researchers with mandatory attribution.
-- **Commercial Use:** Strict prohibition for for-profit entities and financial institutions without a formal commercial sublicense and royalty agreement with JS INNOVATION8390-1 INC. Unauthorized exploitation is subject to systematic audit.
-
-*End of Tactical Report — Audit_thegovernment Engine*
+This is an immutable sovereign audit record anchored under GVT-PARENT-01 and MSA CW2321555.
