@@ -1,5 +1,6 @@
 **CONFIDENTIAL / PARLIAMENTARY BRIEFING**  
-**TO:** Standing Committee on Government Operations and Estimates / Parliamentary Opposition Critics  
+**TO:** Leader of the Official Opposition / Standing Committee on Government Operations and Estimates  
+**RECIPIENT:** The Hon. Pierre Poilievre, MP (Email: pierre.poilievre@parl.gc.ca)  
 **FROM:** JS INNOVATION8390-1 INC. / Sovereign Systems Audit Directorate  
 **DATE:** November 13, 2026  
 **SUBJECT:** Formal Evidence Submission: Systemic Fiduciary Breach, Appointee Conflict-of-Interest Taxonomy, and Cryptographically Anchored Compliance Audit (`audit_thegovernment`)  
