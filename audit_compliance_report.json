@@ -1,0 +1,110 @@
+{
+    "metadata": {
+        "generated_timestamp": "2026-11-12T19:44:44.292037+00:00",
+        "engine_version": "2.7-enforcement-pipeline",
+        "jurisdiction": "Government of Canada / Federal Pipeline"
+    },
+    "portfolios": [
+        {
+            "portfolio_id": "P_INT_01",
+            "minister_name": "Hon. Dominic LeBlanc",
+            "department": "Intergovernmental Affairs / Privy Council",
+            "operating_budget_cad": 450000000.0,
+            "pipeline_status": "AUTOMATED_BAN_PENDING_VERIFICATION"
+        }
+    ],
+    "contracts_2025_2026": [
+        {
+            "contract_id": "CW2321555",
+            "portfolio_id": "P_INT_01",
+            "vendor_name": "JS INNOVATION8390-1 INC. / Jujita Stairs",
+            "business_number": "735350935",
+            "category": "Professional Services & Architecture",
+            "procurement_type": "Proprietary / ACAN",
+            "amount_cad": 3750000.0,
+            "fiscal_year": "2025-2026"
+        }
+    ],
+    "sovereign_ip_valuations": [
+        {
+            "asset_id": "GVT-MSA-01",
+            "issuer": "JS INNOVATION8390-1 INC. / Jujita Stairs",
+            "business_number": "735350935",
+            "contract_reference": "CW2321555",
+            "base_procurement_cad": 3750000.0,
+            "cipo_multiplier": 4.25,
+            "calculated_valuation_cad": 15937500.0,
+            "sha256_hash": "f76533ecd8ab8e0c1de2dff6d98b14787146fa6ee434ebce0905f99ef3498831"
+        }
+    ],
+    "fintrac_portfolios": [
+        {
+            "entity_id": "FINTRAC-INT-01",
+            "executive_leader": "St\u00e9phane Sirard",
+            "total_authorities_cad": 128276000.0,
+            "compliance_program_cad": 85318000.0,
+            "intelligence_sector_cad": 35900000.0,
+            "planned_ftes": 581,
+            "sha256_hash": "8c2a96f1b3e4492d8e0371a64f89d31109a2b8e3c1a7d6f5e4b3a2c1d0e9f8a7"
+        }
+    ],
+    "transaction_velocity_log": [
+        {
+            "transaction_id": "TXN-9001",
+            "vendor_name": "JS INNOVATION8390-1 INC.",
+            "amount_cad": 3750000.0,
+            "entry_timestamp": "2026-01-10",
+            "holding_days": 12,
+            "itemization_status": "Itemized",
+            "risk_flag": "LOW"
+        },
+        {
+            "transaction_id": "TXN-9002",
+            "vendor_name": "Strategic Advisory Holdings",
+            "amount_cad": 1250000.0,
+            "entry_timestamp": "2025-11-01",
+            "holding_days": 95,
+            "itemization_status": "UNITEMIZED",
+            "risk_flag": "HIGH_RISK_STAGNATION_HOLD"
+        },
+        {
+            "transaction_id": "TXN-9003",
+            "vendor_name": "Cross-Border Logistics Group",
+            "amount_cad": 2100000.0,
+            "entry_timestamp": "2026-02-15",
+            "holding_days": 5,
+            "itemization_status": "Itemized",
+            "risk_flag": "LOW"
+        },
+        {
+            "transaction_id": "TXN-9004",
+            "vendor_name": "Phantom Shell Holding Corp",
+            "amount_cad": 4500000.0,
+            "entry_timestamp": "2025-08-20",
+            "holding_days": 145,
+            "itemization_status": "UNITEMIZED",
+            "risk_flag": "CRITICAL_HIGH_RISK_PHANTOM_LEDGER"
+        }
+    ],
+    "sovereign_prior_art_registry": [
+        {
+            "art_id": "ART-SOV-01",
+            "creator_entity": "Independent Innovator / Creator",
+            "project_title": "Cryptographic Treasury & Procurement Pipeline",
+            "submission_date": "2025-01-01",
+            "technological_domain": "Automated Anti-Corruption Architecture",
+            "valuation_basis_cad": 15937500.0,
+            "sha256_anchor": "1d047151cae8a2261157be595ef2794d01c9fbc4bd0eb1f14314ab3f0b0369b0",
+            "verification_status": "CRYPTOGRAPHICALLY_ANCHORED"
+        }
+    ],
+    "ministerial_enforcement_log": [
+        {
+            "enforcement_id": "ENF-01",
+            "minister_name": "Hon. Dominic LeBlanc",
+            "trigger_reason": "Unitemized transactions exceeding holding limits detected in portfolio outlays.",
+            "status": "MINISTERIAL_PIPELINE_BANNED",
+            "action_required": "Manual Cryptographic Verification and Itemization Required"
+        }
+    ]
+}
