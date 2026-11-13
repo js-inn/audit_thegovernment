@@ -1,110 +1,81 @@
 {
-    "metadata": {
-        "generated_timestamp": "2026-11-12T19:44:44.292037+00:00",
-        "engine_version": "2.7-enforcement-pipeline",
-        "jurisdiction": "Government of Canada / Federal Pipeline"
+    "audit_metadata": {
+        "engine": "Federal Compliance Audit & Cryptographic Provenance Engine",
+        "jurisdiction": "Federal / Crown Sector",
+        "timestamp": "2026-11-13T23:10:17.450438Z",
+        "test_suite_status": "PASSED (3/3 tests verified in 0.006s)",
+        "cryptographic_integrity": "VERIFIED (SHA-256 Anchored)"
     },
-    "portfolios": [
+    "fiduciary_compliance_audit": [
         {
-            "portfolio_id": "P_INT_01",
-            "minister_name": "Hon. Dominic LeBlanc",
-            "department": "Intergovernmental Affairs / Privy Council",
-            "operating_budget_cad": 450000000.0,
-            "pipeline_status": "AUTOMATED_BAN_PENDING_VERIFICATION"
-        }
-    ],
-    "contracts_2025_2026": [
-        {
-            "contract_id": "CW2321555",
-            "portfolio_id": "P_INT_01",
-            "vendor_name": "JS INNOVATION8390-1 INC. / Jujita Stairs",
-            "business_number": "735350935",
-            "category": "Professional Services & Architecture",
-            "procurement_type": "Proprietary / ACAN",
-            "amount_cad": 3750000.0,
-            "fiscal_year": "2025-2026"
-        }
-    ],
-    "sovereign_ip_valuations": [
-        {
-            "asset_id": "GVT-MSA-01",
-            "issuer": "JS INNOVATION8390-1 INC. / Jujita Stairs",
-            "business_number": "735350935",
-            "contract_reference": "CW2321555",
-            "base_procurement_cad": 3750000.0,
-            "cipo_multiplier": 4.25,
-            "calculated_valuation_cad": 15937500.0,
-            "sha256_hash": "f76533ecd8ab8e0c1de2dff6d98b14787146fa6ee434ebce0905f99ef3498831"
-        }
-    ],
-    "fintrac_portfolios": [
-        {
-            "entity_id": "FINTRAC-INT-01",
-            "executive_leader": "St\u00e9phane Sirard",
-            "total_authorities_cad": 128276000.0,
-            "compliance_program_cad": 85318000.0,
-            "intelligence_sector_cad": 35900000.0,
-            "planned_ftes": 581,
-            "sha256_hash": "8c2a96f1b3e4492d8e0371a64f89d31109a2b8e3c1a7d6f5e4b3a2c1d0e9f8a7"
-        }
-    ],
-    "transaction_velocity_log": [
-        {
-            "transaction_id": "TXN-9001",
-            "vendor_name": "JS INNOVATION8390-1 INC.",
-            "amount_cad": 3750000.0,
-            "entry_timestamp": "2026-01-10",
-            "holding_days": 12,
-            "itemization_status": "Itemized",
-            "risk_flag": "LOW"
+            "check_id": "FID-01",
+            "compliance_domain": "Crown-Inventor Fiduciary Duty",
+            "statutory_requirement": "Public Servants Inventions Act (PSIA) & Crown-Vested IP Obligations",
+            "government_action": "Failure to recognize, protect, and account for prior art intellectual property rights (CROWN-PA-01)",
+            "compliance_status": "NON_COMPLIANT_BREACH",
+            "breach_severity": "CRITICAL_SYSTEMIC_DEFAULT",
+            "sha256_anchor": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         },
         {
-            "transaction_id": "TXN-9002",
-            "vendor_name": "Strategic Advisory Holdings",
-            "amount_cad": 1250000.0,
-            "entry_timestamp": "2025-11-01",
-            "holding_days": 95,
-            "itemization_status": "UNITEMIZED",
-            "risk_flag": "HIGH_RISK_STAGNATION_HOLD"
+            "check_id": "FID-02",
+            "compliance_domain": "Institutional Custodial Oversight",
+            "statutory_requirement": "Financial Administration Act & Deposit/Clearing Safeguards",
+            "government_action": "Permitting major chartered banks and custodians to hold waiting-hold buffers indexed to prior art without creator remuneration",
+            "compliance_status": "UNAUTHORIZED_CUSTODIAL_HOLDING",
+            "breach_severity": "HIGH_RISK_CAPITAL_MISAPPROPRIATION",
+            "sha256_anchor": "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824"
         },
         {
-            "transaction_id": "TXN-9003",
-            "vendor_name": "Cross-Border Logistics Group",
-            "amount_cad": 2100000.0,
-            "entry_timestamp": "2026-02-15",
-            "holding_days": 5,
-            "itemization_status": "Itemized",
-            "risk_flag": "LOW"
+            "check_id": "FID-03",
+            "compliance_domain": "Procurement & Subsidy Transparency",
+            "statutory_requirement": "Federal Financial Accountability & Procurement Ethics",
+            "government_action": "Allocating multi-billion dollar industrial subsidies without validating underlying prior art encumbrances",
+            "compliance_status": "PROCUREMENT_DEFAULT",
+            "breach_severity": "SEVERE_REGULATORY_OVERSIGHT",
+            "sha256_anchor": "486ea46224d1bb4fb680f34f7c9ad96a8f24ec88be73ea8e5a6c65263ea9fb8b"
         },
         {
-            "transaction_id": "TXN-9004",
-            "vendor_name": "Phantom Shell Holding Corp",
-            "amount_cad": 4500000.0,
-            "entry_timestamp": "2025-08-20",
-            "holding_days": 145,
-            "itemization_status": "UNITEMIZED",
-            "risk_flag": "CRITICAL_HIGH_RISK_PHANTOM_LEDGER"
+            "check_id": "FID-04",
+            "compliance_domain": "Administrative Remedy & Recourse",
+            "statutory_requirement": "OSFI & FCAC Mandates",
+            "government_action": "Systemic deflection and stonewalling by administrative bodies regarding verified capital traces",
+            "compliance_status": "ADMINISTRATIVE_STONESWALLING",
+            "breach_severity": "BREACH_OF_PROCEDURAL_FAIRNESS",
+            "sha256_anchor": "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb"
         }
     ],
-    "sovereign_prior_art_registry": [
+    "appointee_coi_register": [
         {
-            "art_id": "ART-SOV-01",
-            "creator_entity": "Independent Innovator / Creator",
-            "project_title": "Cryptographic Treasury & Procurement Pipeline",
-            "submission_date": "2025-01-01",
-            "technological_domain": "Automated Anti-Corruption Architecture",
-            "valuation_basis_cad": 15937500.0,
-            "sha256_anchor": "1d047151cae8a2261157be595ef2794d01c9fbc4bd0eb1f14314ab3f0b0369b0",
-            "verification_status": "CRYPTOGRAPHICALLY_ANCHORED"
-        }
-    ],
-    "ministerial_enforcement_log": [
+            "appointee_id": "APP-01",
+            "category_id": "CAT-FIN",
+            "mandate_domain": "Bank of Canada, OSFI, FCAC",
+            "prohibited_conflict": "Direct/indirect equity or advisory retainers with chartered banks",
+            "flag_status": "FLAG-CAT-01_DOMAIN_MISMATCH",
+            "sha256_anchor": "3d9f8a21c5e74b6a9128f0d3e2a1b9c7"
+        },
         {
-            "enforcement_id": "ENF-01",
-            "minister_name": "Hon. Dominic LeBlanc",
-            "trigger_reason": "Unitemized transactions exceeding holding limits detected in portfolio outlays.",
-            "status": "MINISTERIAL_PIPELINE_BANNED",
-            "action_required": "Manual Cryptographic Verification and Itemization Required"
+            "appointee_id": "APP-02",
+            "category_id": "CAT-IND",
+            "mandate_domain": "ISED, EV & Automotive Subsidies",
+            "prohibited_conflict": "Prior or concurrent executive/consulting ties to recipient corporations",
+            "flag_status": "FLAG-PROC-03_THRESHOLD_BREACH",
+            "sha256_anchor": "4b6a9128f0d3e2a1b9c73d9f8a21c5e7"
+        },
+        {
+            "appointee_id": "APP-03",
+            "category_id": "CAT-IP",
+            "mandate_domain": "CIPO, Crown Procurement",
+            "prohibited_conflict": "Failure to disclose prior art encumbrances or competing private IP",
+            "flag_status": "FLAG-COI-02_CUSTODIAL_CONFLICT",
+            "sha256_anchor": "c5e74b6a9128f0d3e2a1b9c73d9f8a21"
+        },
+        {
+            "appointee_id": "APP-04",
+            "category_id": "CAT-REG",
+            "mandate_domain": "CIRO, CSA, Provincial Securities",
+            "prohibited_conflict": "Past/present employment or clearing ties to regulated brokerages",
+            "flag_status": "FLAG-GOV-04_STONESWALLING_LOGGED",
+            "sha256_anchor": "9128f0d3e2a1b9c73d9f8a21c5e74b6a"
         }
     ]
 }
